@@ -6,6 +6,8 @@ import data from "./data";
 import Navigation from "./components/Navigation";
 import Products from "./components/Products";
 import ShoppingCart from "./components/ShoppingCart";
+import ProductContext from "./contexts/ProductContext";
+import CartContext from "./contexts/CartContext.js";
 
 function App() {
   const [products] = useState(data);
@@ -14,7 +16,7 @@ function App() {
   );
 
   const addItem = item => {
-    // add the given item to the cart
+    setCart([...cart, item]);
   };
 
   return (
